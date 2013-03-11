@@ -1,0 +1,32 @@
+<%= validation_errors(@user) %>
+
+<%= form_for @user, :url => "register" do |f| %>
+
+  <%= f.label :first_name, 'First Name' %>:
+  <%= f.text_field :first_name %><br />
+
+  <%= f.label :last_name, 'Last Name' %>:
+  <%= f.text_field :last_name %><br />
+
+  <%= f.label :age, 'Age' %>:
+  <%= f.text_field :age %><br />
+
+  <%= f.label :gender, 'Gender' %>:
+  <%= f.radio_button :gender, "m" %>Male
+  <%= f.radio_button :gender, "f" %>Female<br />
+
+  <%= f.label :hobby, 'Hobbies' %>:
+  <%= f.check_box :hobby1, {}, "swimming", "no" %>Swimming
+  <%= f.check_box :hobby2, {}, "cricket", "no" %>Cricket
+  <%= f.check_box :hobby3, {}, "football", "no" %>Football<br />
+
+  <%= f.label :description, 'Description' %>:
+  <%= f.text_area :description, :size => "40x10" %><br />
+ 
+  <%= f.check_box :accept, {}, "yes", "no" %>I agree to terms
+
+
+  <%= f.submit %>
+<% end %>
+
+

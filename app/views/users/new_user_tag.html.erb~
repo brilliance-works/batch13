@@ -1,0 +1,23 @@
+<%= form_tag "create_user" do %>
+
+  <%= label_tag :first_name, 'FIRST NAME' %>:
+  <%= text_field_tag 'user[first_name]', "",{:size => 40 , :class => "tstyle", :maxlength => 5}%><br />
+
+  <%= label_tag :last_name, 'LAST NAME' %>:
+  <%= text_field_tag 'user[last_name]' %><br />
+ 
+  <%= label_tag :age, 'AGE' %>:
+  <%= text_field_tag 'user[age]' %><br />
+
+  <%= label_tag :address1, 'Address Line1' %>:
+  <%= text_field_tag 'user[address1]' %><br />
+
+  <%= label_tag :address2, 'Address Line2' %>:
+  <%= text_field_tag 'user[address2]' %><br />
+
+  <%= label_tag :city, 'City' %>:
+  <%= select_tag user[city] , "<option value='Blore'>Bangalore</option><option value='Hyd'>Hyderabad</option><option value='Mum'>Mumbai</option><option value='Che'>Chennai</option>".html_safe %><br />
+
+  <%= submit_tag %>
+
+<% end %>

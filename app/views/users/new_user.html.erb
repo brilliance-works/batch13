@@ -1,0 +1,18 @@
+<%= form_for @user, :url => "create_user" do |f| %>
+
+  <%= f.label :first_name, 'FIRST NAME' %>:
+  <%= f.text_field :first_name, :size => 40 , :class => "tstyle", :maxlength => 5%><br />
+
+  <%= f.label :last_name, 'LAST NAME' %>:
+  <%= f.text_field :last_name %><br />
+ 
+  <%= f.label :age, 'AGE' %>:
+  <%= f.text_field :age %><br />
+
+ <%= f.label :city, 'AGE' %>:
+ <%#= select(:user, :city, City.all.collect{|city| city.name}, {:include_blank => "Select"}) %>
+
+ <%= collection_select(:user, :city, City.all, :id, :name, {:include_blank => "Select"}) %>
+
+  <%= f.submit %>
+<% end %>
